@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.1-2
+-----
+
+-   Simplify setup.py.
+
+-   Fix wrong dev alias in setup.cfg.
+
 0.1-1
 -----
 
