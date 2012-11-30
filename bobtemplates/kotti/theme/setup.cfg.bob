@@ -1,0 +1,11 @@
+[minify_css]
+sources = {{{ package.name }}}/static/css/*.css
+output = {{{ package.name }}}/static/css/%s.min.css
+
+[minify_js]
+sources = {{{ package.name }}}/static/js/*.js
+output = {{{ package.name }}}/static/js/%s.min.js
+
+[aliases]
+dev = develop
+minify = minify_css minify_js
