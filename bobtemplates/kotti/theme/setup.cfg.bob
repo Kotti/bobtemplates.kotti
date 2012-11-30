@@ -7,5 +7,5 @@ sources = {{{ package.name }}}/static/js/*.js
 output = {{{ package.name }}}/static/js/%s.min.js
 
 [aliases]
-dev = develop
+dev = develop easy_install Kotti[testing] Kotti[development]
 minify = minify_css minify_js
