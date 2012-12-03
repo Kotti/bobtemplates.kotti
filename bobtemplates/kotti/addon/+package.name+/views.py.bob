@@ -1,0 +1,64 @@
+# -*- coding: utf-8 -*-
+
+from colander import SchemaNode
+from colander import String
+from kotti.views.edit.content import ContentSchema
+from kotti.views.form import AddFormView
+from kotti.views.form import EditFormView
+from pyramid.view import view_config
+from pyramid.view import view_defaults
+
+from {{{ package.name }}} import _
+from {{{ package.name }}}.resources import {{{ content_type.classname }}}
+
+
+class {{{ content_type.classname }}}Schema(ContentSchema):
+    """Schema for add / edit forms of {{{ content_type.classname }}}"""
+
+    example_attribute = SchemaNode(
+        String(),
+        title=_(u'Example Attribute'),
+        missing=u"",
+    )
+
+
+@view_config(name={{{ content_type.classname }}}.type_info.add_view,
+             permission='add',
+             renderer='kotti:templates/edit/node.pt')
+class {{{ content_type.classname }}}AddForm(AddFormView):
+
+    schema_factory = {{{ content_type.classname }}}Schema
+    add = {{{ content_type.classname }}}
+    item_type = _(u"{{{ content_type.classname }}}")
+
+
+@view_config(name='edit',
+             context={{{ content_type.classname }}},
+             permission='edit',
+             renderer='kotti:templates/edit/node.pt')
+class {{{ content_type.classname }}}EditForm(EditFormView):
+
+    schema_factory = {{{ content_type.classname }}}Schema
+
+
+@view_defaults(context={{{ content_type.classname }}}, permission='view')
+class {{{ content_type.classname }}}View(object):
+    """View(s) for {{{ content_type.classname }}}"""
+
+    def __init__(self, context, request):
+
+        self.context = context
+        self.request = request
+
+    @view_config(name='view',
+                 renderer='{{{ package.name}}}:templates/{{{ content_type.classname.lower() }}}.pt')
+    def view(self):
+
+        return {}
+
+    @view_config(name='alternative-view',
+                 renderer='{{{ package.name}}}:templates/{{{ content_type.classname.lower() }}}-alternative.pt')
+    def alternative_view(self):
+
+        return {}
+

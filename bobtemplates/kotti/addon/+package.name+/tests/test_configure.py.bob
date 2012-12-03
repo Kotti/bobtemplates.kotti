@@ -1,0 +1,28 @@
+from pyramid.interfaces import ITranslationDirectories
+
+from {{{ package.name }}} import includeme
+from {{{ package.name }}} import kotti_configure
+
+
+def test_kotti_configure():
+
+    settings = {
+        'pyramid.includes': '',
+    }
+
+    kotti_configure(settings)
+
+    assert settings['pyramid.includes'] == ' {{{ package.name }}}'
+
+
+def test_includeme(config):
+
+    includeme(config)
+
+    utils = config.registry.__dict__['_utility_registrations']
+    k = (ITranslationDirectories, u'')
+
+    # test if the translation dir is registered
+    assert k in utils
+    assert utils[k][0][0].find('{{{ package.name }}}/locale') > 0
+

@@ -1,0 +1,33 @@
+from kotti.resources import Content
+from sqlalchemy import Column
+from sqlalchemy import ForeignKey
+from sqlalchemy import Integer
+from sqlalchemy import Unicode
+
+from {{{ package.name }}} import _
+
+
+class {{{ content_type.classname }}}(Content):
+    """My content type"""
+
+    id = Column(
+        Integer(),
+        ForeignKey('contents.id'),
+        primary_key=True
+    )
+
+    # Add additional columns here
+    example_attribute = Column(
+        Unicode()
+    )
+
+    type_info = Content.type_info.copy(
+        name=u'{{{ content_type.classname }}}',
+        title=_(u'{{{ content_type.info.title }}}'),
+        add_view=u'add_{{{ content_type.classname.lower() }}}',
+        addable_to={{{ content_type.info.addable_to }}},
+        selectable_default_views=[
+            ('alternative-view', _(u"Alternative View")),
+        ],
+    )
+

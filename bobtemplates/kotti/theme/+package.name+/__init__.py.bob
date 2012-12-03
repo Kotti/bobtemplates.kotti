@@ -12,5 +12,8 @@ view_needed = NeededGroup([css, view_needed_js, ])
 
 
 def kotti_configure(settings):
+
+    settings['kotti.asset_overrides'] = '{{{ package.name }}}:kotti-overrides/'
+
     settings['kotti.fanstatic.view_needed'] = '{{{ package.name }}}.view_needed'
     settings['kotti.fanstatic.edit_needed'] = '{{{ package.name }}}.edit_needed'

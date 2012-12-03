@@ -5,7 +5,7 @@ kotti.configurators =
     kotti_tinymce.kotti_configure
     {{{ package.name }}}.kotti_configure
 kotti.secret = qwerty
-kotti.site_title = {{{ theme.name }}} Themed Kotti Site
+kotti.site_title = Kotti Site with {{{ content_type.info.title }}}
 pyramid.debug_templates = true
 pyramid.includes =
     pyramid_tm
