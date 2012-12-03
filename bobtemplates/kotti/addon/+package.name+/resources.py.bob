@@ -31,3 +31,9 @@ class {{{ content_type.classname }}}(Content):
         ],
     )
 
+    def __init__(self, example_attribute=u"", **kwargs):
+
+        super({{{ content_type.classname }}}, self).__init__(**kwargs)
+
+        self.example_attribute = example_attribute
+

@@ -10,6 +10,7 @@ from pyramid.view import view_defaults
 
 from {{{ package.name }}} import _
 from {{{ package.name }}}.resources import {{{ content_type.classname }}}
+from {{{ package.name }}}.fanstatic import {{{ package.name }}}
 
 
 class {{{ content_type.classname }}}Schema(ContentSchema):
@@ -53,6 +54,8 @@ class {{{ content_type.classname }}}View(object):
     @view_config(name='view',
                  renderer='{{{ package.name}}}:templates/{{{ content_type.classname.lower() }}}.pt')
     def view(self):
+
+        {{{ package.name }}}.need()
 
         return {}
 

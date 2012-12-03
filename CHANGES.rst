@@ -1,10 +1,10 @@
 Changelog
 =========
 
-0.2
----
+0.2a1
+-----
 
--   Add a very basic ``content_type`` template.
+-   Add a basic ``addon`` template.
 
 -   Add ``kotti.asset_overrides`` with overridden ``foter.pt`` as example to
     ``theme`` template.

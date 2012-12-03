@@ -7,12 +7,14 @@ from {{{ package.name }}} import kotti_configure
 def test_kotti_configure():
 
     settings = {
+        'kotti.available_types': '',
         'pyramid.includes': '',
     }
 
     kotti_configure(settings)
 
     assert settings['pyramid.includes'] == ' {{{ package.name }}}'
+    assert settings['kotti.available_types'] == ' {{{ package.name }}}.resources.{{{ content_type.classname }}}'
 
 
 def test_includeme(config):

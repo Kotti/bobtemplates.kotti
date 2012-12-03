@@ -47,7 +47,7 @@ setup(
     ],
     entry_points={
         'fanstatic.libraries': [
-            '{{{ package.name }}} = {{{ package.name }}}:fanstatic.library',
+            '{{{ package.name }}} = {{{ package.name }}}.fanstatic:library',
         ],
     },
     message_extractors={
