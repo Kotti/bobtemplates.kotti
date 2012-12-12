@@ -48,7 +48,7 @@ addopts =
     --tb=native
     --cov={{{ package.name }}}
     --cov-report=term-missing
-    {{{ package.name }}}/
+    {{{ package.name }}}/tests/
 python_files = test_*.py
 pep8ignore = E501 E122 E123 E125 E128 E711
 markers =
