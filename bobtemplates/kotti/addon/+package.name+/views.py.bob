@@ -52,7 +52,7 @@ class {{{ content_type.classname }}}View(object):
         self.request = request
 
     @view_config(name='view',
-                 renderer='{{{ package.name}}}:templates/{{{ content_type.classname.lower() }}}.pt')
+                 renderer='{{{ package.name}}}:templates/{{{ content_type.classname }}}.pt')
     def view(self):
 
         {{{ package.name }}}.need()
@@ -60,7 +60,7 @@ class {{{ content_type.classname }}}View(object):
         return {}
 
     @view_config(name='alternative-view',
-                 renderer='{{{ package.name}}}:templates/{{{ content_type.classname.lower() }}}-alternative.pt')
+                 renderer='{{{ package.name}}}:templates/{{{ content_type.classname }}}-alternative.pt')
     def alternative_view(self):
 
         return {}
