@@ -4,7 +4,8 @@ from kotti.testing import DummyRequest
 from {{{ package.name }}}.resources import {{{ content_type.classname }}}
 
 
-def test_{{{ content_type.classname.lower() }}}(db_session):
+def test_{{{ content_type.classname.lower() }}}(db_session, config):
+    config.include('{{{ package.name }}}')
 
     root = get_root()
     content = {{{ content_type.classname }}}()
