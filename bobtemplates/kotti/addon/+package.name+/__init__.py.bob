@@ -10,7 +10,6 @@ def kotti_configure(settings):
     settings['kotti.available_types'] += ' {{{ package.name }}}.resources.{{{ content_type.classname }}}'
 
 
-
 def includeme(config):
 
     config.add_translation_dirs('{{{ package.name }}}:locale')
