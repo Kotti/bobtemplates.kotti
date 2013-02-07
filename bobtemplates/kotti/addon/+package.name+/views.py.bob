@@ -20,7 +20,7 @@ class {{{ content_type.classname }}}Schema(ContentSchema):
         String(),
         title=_(u'Example Attribute'),
         missing=u"",
-    )
+        )
 
 
 @view_config(name={{{ content_type.classname }}}.type_info.add_view,

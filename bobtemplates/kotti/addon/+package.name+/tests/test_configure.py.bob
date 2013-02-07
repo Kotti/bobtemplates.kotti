@@ -9,7 +9,7 @@ def test_kotti_configure():
     settings = {
         'kotti.available_types': '',
         'pyramid.includes': '',
-    }
+        }
 
     kotti_configure(settings)
 

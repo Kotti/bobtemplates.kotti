@@ -27,7 +27,7 @@ setup(
         "Programming Language :: Python :: 2.7",
         "Topic :: Internet :: WWW/HTTP",
         "Topic :: Software Development :: User Interfaces",
-    ],
+        ],
     keywords='kotti theme',
 {{% if author.name %}}
     author='{{{ author.name }}}',
@@ -44,17 +44,17 @@ setup(
     zip_safe=False,
     install_requires=[
         'Kotti',
-    ],
+        ],
     entry_points={
         'fanstatic.libraries': [
             '{{{ package.name }}} = {{{ package.name }}}.fanstatic:library',
-        ],
-    },
+            ],
+        },
     message_extractors={
         '{{{ package.name }}}': [
             ('**.py', 'lingua_python', None),
             ('**.zcml', 'lingua_xml', None),
             ('**.pt', 'lingua_xml', None),
-        ]
-    },
-)
+            ]
+        },
+    )

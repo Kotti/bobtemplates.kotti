@@ -18,12 +18,12 @@ class {{{ content_type.classname }}}(Content):
         Integer(),
         ForeignKey('contents.id'),
         primary_key=True
-    )
+        )
 
     # Add additional columns here
     example_attribute = Column(
         Unicode()
-    )
+        )
 
     type_info = Content.type_info.copy(
         name=u'{{{ content_type.classname }}}',
@@ -32,8 +32,8 @@ class {{{ content_type.classname }}}(Content):
         addable_to={{{ content_type.info.addable_to }}},
         selectable_default_views=[
             ('alternative-view', _(u"Alternative View")),
-        ],
-    )
+            ],
+        )
 
     def __init__(self, example_attribute=u"", **kwargs):
 
