@@ -1,0 +1,11 @@
+from kotti.resources import get_root
+
+from {{{ package.name }}}.widget import {{{ widget.name }}}_widget
+
+
+def test_widget_view(db_session, dummy_request, root):
+
+    widget_vals = {{{ widget.name }}}_widget(root, dummy_request)
+
+    assert widget_vals == {'values': ['My', 'widget']}
+

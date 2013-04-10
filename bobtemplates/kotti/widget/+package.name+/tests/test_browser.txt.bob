@@ -1,0 +1,28 @@
+{{{ package.name }}} browser tests
+==============================
+
+Setup and Login
+---------------
+
+  >>> from kotti import testing
+  >>> tools = testing.setUpFunctional(
+  ...     **{'kotti.configurators': '{{{ package.name }}}.kotti_configure'})
+  >>> browser = tools['Browser']()
+  >>> ctrl = browser.getControl
+
+  >>> browser.open(testing.BASE_URL + '/@@login')
+  >>> ctrl('Username or email').value = 'admin'
+  >>> ctrl('Password').value = 'secret'
+  >>> ctrl(name='submit').click()
+
+
+Check widget
+----------------
+
+  >>> browser.open(testing.BASE_URL)
+  >>> "Values:" in browser.contents
+  True
+  >>> "<span>My</span>" in browser.contents
+  True
+  >>> "<span>widget</span>" in browser.contents
+  True

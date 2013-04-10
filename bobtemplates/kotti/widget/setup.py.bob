@@ -1,0 +1,60 @@
+import os
+
+from setuptools import find_packages
+from setuptools import setup
+
+project = '{{{ package.name }}}'
+version = '{{{ package.version }}}'
+
+here = os.path.abspath(os.path.dirname(__file__))
+README = open(os.path.join(here, 'README.rst')).read()
+CHANGES = open(os.path.join(here, 'CHANGES.rst')).read()
+
+setup(
+    name=project,
+    version=version,
+    description="{{{ widget.name }}} widget for Kotti",
+    long_description=README + '\n\n' + CHANGES,
+    classifiers=[
+        "Environment :: Web Environment",
+        "Framework :: Pylons",
+        "Framework :: Pyramid",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: BSD License",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 2.6",
+        "Programming Language :: Python :: 2.7",
+        "Topic :: Internet :: WWW/HTTP",
+        "Topic :: Software Development :: User Interfaces",
+    ],
+    keywords='kotti theme',
+{{% if author.name %}}
+    author='{{{ author.name }}}',
+{{% endif %}}
+{{% if author.email %}}
+    author_email='{{{ author.email }}}',
+{{% endif %}}
+{{% if author.github.user %}}
+    url='https://github.com/{{{ author.github.user }}}/{{{ package.name }}}',
+{{% endif %}}
+    license='{{{ package.license }}}',
+    packages=find_packages(),
+    include_package_data=True,
+    zip_safe=False,
+    install_requires=[
+        'Kotti',
+    ],
+    entry_points={
+        'fanstatic.libraries': [
+            '{{{ package.name }}} = {{{ package.name }}}.fanstatic:library',
+        ],
+    },
+    message_extractors={
+        '{{{ package.name }}}': [
+            ('**.py', 'lingua_python', None),
+            ('**.zcml', 'lingua_xml', None),
+            ('**.pt', 'lingua_xml', None),
+        ]
+    },
+)

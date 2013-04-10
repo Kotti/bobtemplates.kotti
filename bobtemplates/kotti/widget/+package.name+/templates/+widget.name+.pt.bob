@@ -1,0 +1,6 @@
+<div class="{{{ widget.name }}}-view">
+    Values:
+    <tal:repeat tal:repeat="val values">
+        <span>${val}</span>
+    </tal:repeat>
+</div>

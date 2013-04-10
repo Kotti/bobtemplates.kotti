@@ -1,0 +1,14 @@
+from pyramid.i18n import TranslationStringFactory
+
+_ = TranslationStringFactory('{{{ package.name }}}')
+
+
+def kotti_configure(settings):
+    settings['pyramid.includes'] +=\
+        ' {{{ package.name }}} {{{ package.name }}}.widget'
+    settings['kotti.fanstatic.view_needed'] =\
+        ' {{{ package.name }}}.fanstatic.{{{ package.name }}}'
+
+
+def includeme(config):
+    config.add_translation_dirs('{{{ package.name }}}:locale')

@@ -4,6 +4,8 @@ Changelog
 0.2a2
 -----
 
+- Add a basic ``widget`` template.
+
 - Add questions for ``author.name``, ``author.email`` and
   ``author.github.user`` to templates so that they will be asked for
   if they don't exist in ``~/.mrbob``.
