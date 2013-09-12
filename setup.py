@@ -23,7 +23,7 @@ setup(
     keywords='',
     author='Andreas Kaiser',
     author_email='disko@binary-punks.com',
-    url='https://github.com/disko/bobtemplates.kotti',
+    url='https://github.com/Kotti/bobtemplates.kotti',
     license='BSD',
     packages=find_packages(exclude=['ez_setup']),
     namespace_packages=['bobtemplates'],
