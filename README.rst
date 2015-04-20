@@ -1,3 +1,10 @@
+Unmaintained / superceded
+=========================
+
+Please use the scaffold provided by Kotti instead:: 
+
+  pcreate -s kotti my_project
+
 Introduction
 ============
 
